@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Staff Yearly Calendar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>Staff Yearly Calendar</h1>
+
+  <label>Select staff:</label>
+  <select id="staffSelect">
+    <option value="Petro">Petro</option>
+    <option value="Mina">Mina</option>
+    <option value="Samir">Samir</option>
+  </select>
+
+  <select id="yearSelect"></select>
+  <button onclick="exportPDF()">Export PDF</button>
+</header>
+
+<div id="calendar"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+</script>
+
+</body>
+</html>
